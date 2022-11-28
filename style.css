@@ -73,13 +73,9 @@ a{
 }
 
 img {
-	width: 100%;
+	width: 65%;
 	display: block;
-	height: fit-content;
 	
-}
-span {
-	margin-left: 1rem ;
 }
 .btn {
 	display: inline-block;
@@ -102,10 +98,7 @@ span {
 	color: var(--color-white);
 
 }
-.wave-top {
-	position: relative;
-	top: 10px;
-}
+
 /*.tittle {
 	margin: 0 auto 5rem;
 	text-align: center;
@@ -172,50 +165,41 @@ nav button {
 .nav-menu a i {
 	display: none;
 }
+.wave-top {
+	position: relative;
+	top: 15px;
+}
 /* ===============HEADER=============*/
 
 header {
-	position: relative;
-	top: 4rem;
-	height: 70vh;
+	margin-top: 6rem;
 	overflow: hidden;
 }
 
 .header-container {
 	display: flex;
 	align-items: center;
-	gap: 5rem;
 	height: 100%;
+	justify-content: space-between;
 }
-
-.header-left {
-	flex: 0.7;
-}
-
 
 .header-left h1 {
 	color: var(--color-warning);
 	font-weight: 700;
 }
-
 .header-right {
-	flex: 0.3;
-	
-}
-
-.header-right-image {
-	margin-top: 2rem;
 	position: relative;
-	display: flex;
-	z-index: -8;
+}
+.header-right img {
+	position: absolute;
+	top: 20%;
+	left: 20%;
+
 }
 
-.header-right-image span {
-	position: absolute;
-	z-index: -10;
-	bottom: -90px;
-	left: -100px;
-}
+
+
+
 /*.header-right-image::before {
 	content: '';
 	display: block;
@@ -245,6 +229,9 @@ header {
 /* ========================ABOUT SECTION =====================*/
 .about {
 	background-color: var(--color-bg1);
+}
+.about h2 {
+
 }
 
 .about .personal {
@@ -370,6 +357,9 @@ header {
 	transition: var(--transition);
 	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 	/**/
+}
+.project img {
+	width: 100%;
 }
 .project:hover {
 	border-color: var(--color-primary);
@@ -559,22 +549,12 @@ footer {
 	}
 	/*======================HEADER======================*/
 	header {
-		top: 7rem;
-		height: 100vh;
+		top: 6rem;	
 	}
 	.header-container {
 		flex-direction: column;
 		gap: 0;
 		text-align: center;
-	}
-	.header-left {
-		flex: 0.2;
-	}
-	.header-right {
-		flex: 0.8;
-	}
-	.header-right img {
-		width: 250px;
 	}
 	
 	/*======================SERVICES======================*/
