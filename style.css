@@ -124,8 +124,9 @@ nav {
 }
 
 nav h4 {
-	letter-spacing: 1rem;
-	font-weight: 700;
+	font-size: 3rem;
+	font-family: "Clicker Script", cursive;
+	color: var(--color-success);
 }
 
 /*change navbar color */
@@ -169,6 +170,7 @@ nav button {
 	position: relative;
 	top: 15px;
 }
+
 /* ===============HEADER=============*/
 
 header {
@@ -474,8 +476,34 @@ footer {
 	.nav-menu li {
 		width: 100%;
 		height: 4.8rem;
+		position: relative;
+		/*animation: animateNavItems 2s ease forwards;*/
+		opacity: 0;
+	}
+	.nav-menu li:nth-child(1) {
+		animation: animateNavItems .3s ease forwards;
+	}
+	.nav-menu li:nth-child(2) {
+		animation: animateNavItems .5s ease forwards;
+	}
+	.nav-menu li:nth-child(3) {
+		animation: animateNavItems .7s ease  forwards;
+	}
+	.nav-menu li:nth-child(4) {
+		animation: animateNavItems .9s ease  forwards;
+	}
+	.nav-menu li:nth-child(5) {
+		animation: animateNavItems 1.1s ease  forwards;
 	}
 	@keyframes animateNavItems {
+		0% {
+			left: 100%;
+
+		}
+		100% {
+			left: 0;
+			opacity: 1;
+		}
 		
 		
 	}
