@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 	<script src="https://kit.fontawesome.com/3d5538e584.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -22,7 +21,7 @@
 				<li><a href="#contact" class = "page-scroll"><i class="fa-solid fa-message"></i>Contact</a></li>
 			</ul>
 			<button id="open-menu-btn"> <i class="fa-solid fa-bars"></i></button>
-			<button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
+			<button id="close-menu-btn"><i class="fa-solid fa-xmark"></i></button>
 		</div>
 		
 	</nav>
@@ -295,11 +294,18 @@
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto!</p>
 	</div>
 	<div class="container contact-container">
-		<form action="" class="contact-form">
+		<div class="notif d-none">
+			<p>Pesan anda telah kami terima, terimakasih...</p> 
+			<span><i class="fa-solid fa-xmark"></i> </span>	
+		</div>
+		<form action="" class="contact-form" name="adi-contact-form">
 			<input type="text" name = "nama"placeholder="Nama" required>
 			<input type="email" name = "email"placeholder="Email" required>
 			<textarea name="pesan" id=""rows="8" placeholder="Pesan"></textarea>
-			<button class="btn btn-primary" type="submit">Send Messege</button>
+			<button class="btn btn-primary" type="submit">
+				<div class="loader d-none"></div>
+				<p>Kirim Pesan</p>
+			</button>
 		</form>
 
 	</div>
@@ -346,6 +352,42 @@
 	</div>
 </footer>
 <script src = "jquery-361.js."></script>
+
 <script src= "method.js"></script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzrERQ1SRgGYMAO_V9wAmbtfm8teYwQFWKH84CQaDnvGQxdJ1u9sqEhpl0l1wm-S0X0/exec';
+  const form = document.forms['adi-contact-form'];
+  const notif = document.querySelector(".notif");
+  const notifClose = document.querySelector(".notif > span");
+  const kirim = document.querySelector("button[type=submit] p");
+  const loader = document.querySelector("button[type=submit] .loader");
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    //text kirim dihapus
+    kirim.classList.toggle('d-none');
+    //loader dimunculkan
+    loader.classList.toggle('d-none');
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+      	//kirim dimunculkan
+      	kirim.classList.toggle('d-none');
+      	//loader dihapus
+    	loader.classList.toggle('d-none');
+    	notif.classList.toggle('d-none');
+
+    	//form direset
+      	form.reset();
+      	console.log('Success!', response);
+  })
+      .catch(error => console.error('Error!', error.message))
+  });
+//tutup notifkasinya
+  notifClose.addEventListener("click", function() {
+  	notif.classList.add("d-none");
+  });
+
+</script>
 </body>
 </html>

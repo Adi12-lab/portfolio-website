@@ -78,6 +78,7 @@ img {
 	
 }
 .btn {
+
 	display: inline-block;
 	background: var(--color-white);
 	color : var(--color-black);
@@ -108,6 +109,8 @@ img {
 	margin: 0 auto 3rem;
 	padding-top: 2rem;
 }
+
+
 
 /* =======================NAVBAR==========================*/
 
@@ -387,6 +390,31 @@ header {
 	text-align: center;
 	padding-top: 2rem;
 }*/
+
+.notif {
+	width: 100%;
+	height: 50px;
+	background: var(--color-success);
+	border-radius: 10px;
+
+	margin-bottom: 3rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	color: var(--color-bg1);
+	
+}
+.notif span {
+	cursor: pointer;
+	outline: 2px solid transparent;
+	margin-right: 20px;
+	padding: .5rem;
+}
+.notif span:hover {
+	outline: 2px solid var(--color-shadow);
+}
+
 .contact-form {
 	display: flex;
 	flex-direction: column;
@@ -402,8 +430,30 @@ header {
 	background-image: url(../images/bg-texture.png);
 }
 .contact-form button {
-	width: max-content;
+	width: 150px;
+	height: 70px;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contact-form .loader {
+/*	display: none;*/
+	width: 50px;
+	height: 50px;
+	border-top: 2px solid white;
+	border-right:2px solid white ;
+	border-radius: 50%;
+	animation: loaderAnimate .5s linear infinite;
+}
+@keyframes loaderAnimate {
+	0% {
+		transform: totate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 /*=============FOOTER====================*/
@@ -603,4 +653,7 @@ footer {
 		text-align: center;
 		gap: 2rem;
 	}
+}
+.d-none {
+	display: none;
 }
