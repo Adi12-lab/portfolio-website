@@ -31,6 +31,7 @@
 			<div class="header-left">
 				<h3>Hai <span><i class="fa-solid fa-bullhorn"></i></span>, Namaku adalah</h3>
 				<h1>Ahmad Adi Iskandar Ubaidah</h1>
+				<h3>Im a <span>Web Developer</span></h3>
 				<p>Mau kenalan lebih lanjut ? yuk tekan tombol dibawah ini</p>
 				<a href="#about" class="btn btn-primary page-scroll">
 					About me
@@ -368,6 +369,7 @@
     kirim.classList.toggle('d-none');
     //loader dimunculkan
     loader.classList.toggle('d-none');
+    if (!notif.classList.contains('d-none')) notif.classList.add('d-none');
 
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
