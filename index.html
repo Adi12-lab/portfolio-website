@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<script src="https://kit.fontawesome.com/3d5538e584.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -30,7 +31,7 @@
 		<div class="container header-container">
 			<div class="header-left">
 				<h3>Hai <span><i class="fa-solid fa-bullhorn"></i></span>, Namaku adalah</h3>
-				<h1>Ahmad Adi Iskandar Ubaidah</h1>
+				<h1></h1>
 				<h3>Im a <span>Web Developer</span></h3>
 				<p>Mau kenalan lebih lanjut ? yuk tekan tombol dibawah ini</p>
 				<a href="#about" class="btn btn-primary page-scroll">
@@ -40,7 +41,7 @@
 
 			<div class="header-right">
 				
-					<img src="adi.png" alt="Adi">
+					<img src="adi.png" alt="Adi" data-aos = "fade-up" data-aos-duration = "1200" >
 						<svg width= "400" height = "400"viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
 						<path fill="#514EBF" d="M52.5,-29.6C65.9,-7.1,73.1,19.6,63.3,36C53.5,52.5,26.8,58.6,2.3,57.3C-22.2,56,-44.5,47.2,-54.3,30.8C-64.1,14.3,-61.6,-9.9,-50.4,-31C-39.3,-52.1,-19.7,-70.2,0,-70.2C19.6,-70.2,39.1,-52,52.5,-29.6Z" transform="translate(100 100)" />
 						</svg>
@@ -54,7 +55,7 @@
 		<div class="container tittle">
 			<h2>About Me</h2>
 		</div>
-		<div class="container container-about">
+		<div class="container container-about" data-aos = "fade-down">
 			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima quae eius accusantium perspiciatis ea placeat quos fugit impedit quisquam quaerat quis vitae tenetur aliquam nemo, maxime iure hic laborum sed, quibusdam, est? Modi maxime earum animi possimus, ea dolorem fugiat.</p>
 		</div>
 		<div class="container personal">
@@ -292,7 +293,7 @@
 <section class="contact" id="contact">
 	<div class="container tittle " >
 		<h2 >Contact Me</h2>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto!</p>
+		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit!</p>
 	</div>
 	<div class="container contact-container">
 		<div class="notif d-none">
@@ -352,44 +353,35 @@
 		<p>Made by <i class="fa-solid fa-heart"></i> from Ahmad Adi Iskandar</p>
 	</div>
 </footer>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
 <script src = "jquery-361.js."></script>
-
 <script src= "method.js"></script>
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzrERQ1SRgGYMAO_V9wAmbtfm8teYwQFWKH84CQaDnvGQxdJ1u9sqEhpl0l1wm-S0X0/exec';
-  const form = document.forms['adi-contact-form'];
-  const notif = document.querySelector(".notif");
-  const notifClose = document.querySelector(".notif > span");
-  const kirim = document.querySelector("button[type=submit] p");
-  const loader = document.querySelector("button[type=submit] .loader");
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    //text kirim dihapus
-    kirim.classList.toggle('d-none');
-    //loader dimunculkan
-    loader.classList.toggle('d-none');
-    if (!notif.classList.contains('d-none')) notif.classList.add('d-none');
+ <script>
+ 	gsap.registerPlugin(TextPlugin);
+ 	gsap.to(".header-left h1", {duration: 2, text: "Ahmad Adi Iskandar Ubaidah", ease: "none"});
 
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {
-      	//kirim dimunculkan
-      	kirim.classList.toggle('d-none');
-      	//loader dihapus
-    	loader.classList.toggle('d-none');
-    	notif.classList.toggle('d-none');
+ </script>
+  <script>
+  	$(".service").each(function(i, el){
+  		el.dataset.aos = 'fade-down';
+  		el.dataset.aosDelay = 200 * (i+1);
+  	});
 
-    	//form direset
-      	form.reset();
-      	console.log('Success!', response);
-  })
-      .catch(error => console.error('Error!', error.message))
-  });
-//tutup notifkasinya
-  notifClose.addEventListener("click", function() {
-  	notif.classList.add("d-none");
-  });
+  	$(".project").each(function(i,el) {
+  		el.dataset.aos = 'zoom-in-down';
+  		el.dataset.aosDelay = 200 * (i + 1);
+  	});
 
-</script>
+	    AOS.init({
+	    	duration:1200,
+	    	once:true,
+	    	offset:100
+	    });
+	    
+	  // if($(".personal-skills").offset().top)
+  </script>
 </body>
 </html>

@@ -310,19 +310,13 @@ header {
 }
 .progress-info .progress .progress-in {
 	height: 100%;
-	position: absolute;
+	
 	background: var(--color-success);
 	border-radius: 10px;
-	animation: animasi 2s ease normal;
+	transform: translateX(-100%);
+	
 }
-@keyframes animasi {
-	0% {
-		left: -100%;
-	}
-	100% {
-		left: 0%;
-	}
-}
+
 
 /* ========================SERVICES SECTION =====================*/
 .services {
