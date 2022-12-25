@@ -331,15 +331,16 @@ header {
 .service {
 	background: var(--color-bg1);
 	text-align: center;
-	border: 1px solid transparent;
-	transition: var(--transition);
+	border: 15px solid transparent;
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-	
+	transition: var(--transition);
+
 }
 
 .service:hover {
-	background: transparent;
+	bottom: 10px;
 	border-color: var(--color-primary);
+	transform: translateY(30px);
 
 }
 .service-image i{
@@ -365,7 +366,7 @@ header {
 	justify-content: center;
 }
 .project {
-	background: var(--color-bg1);
+	background-color: var(--color-bg1);
 	text-align: center;
 	border: 1px solid transparent;
 	width: 40%;
@@ -378,7 +379,8 @@ header {
 }
 .project:hover {
 	border-color: var(--color-primary);
-	background: transparent;
+	background-color: transparent;
+	
 }
 .project-info {
 	padding: 1rem;
@@ -404,7 +406,7 @@ header {
 .notif {
 	width: 100%;
 	height: 50px;
-	background: var(--color-success);
+	
 	border-radius: 10px;
 
 	margin-bottom: 3rem;
@@ -423,6 +425,12 @@ header {
 }
 .notif span:hover {
 	outline: 2px solid var(--color-shadow);
+}
+.notif.berhasil {
+	background: var(--color-success);
+}
+.notif.gagal {
+	background: var(--color-danger);
 }
 
 .contact-form {
