@@ -4,9 +4,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	
 	 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<script src="https://kit.fontawesome.com/3d5538e584.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<nav>
@@ -361,32 +362,37 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-<script src = "jquery-361.js."></script>
-<script src= "method.js"></script>
+<script src = "js/jquery-361.js."></script>
+<script src= "js/method.js"></script>
 
  <script>
  	gsap.registerPlugin(TextPlugin,ScrollTrigger);
  	gsap.to(".header-left h1", {duration: 2, text: "Ahmad Adi Iskandar Ubaidah", ease: "none"});
- 	gsap.to(".progress-in", {x:0,scrollTrigger:".personal-skills",duration:2,ease:'slow'});
+ 	gsap.to(".progress-in", {x:0,scrollTrigger:".personal-skills",duration:2,ease:'easeInOut'});
 
  </script>
   <script>
   	$(".service").each(function(i, el){
   		el.dataset.aos = 'fade-down';
   		el.dataset.aosDelay = 200 * (i+1);
+
   	});
 
   	$(".project").each(function(i,el) {
   		el.dataset.aos = 'zoom-in-down';
   		el.dataset.aosDelay = 200 * (i + 1);
+  		
   	});
-
+  	
 	    AOS.init({
 	    	duration:1200,
 	    	once:true,
 	    	offset:100
 	    });
-	    
+
+
+
+	
 	  // if($(".personal-skills").offset().top)
   </script>
 </body>

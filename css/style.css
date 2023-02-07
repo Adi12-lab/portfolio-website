@@ -77,6 +77,7 @@ img {
 	display: block;
 	
 }
+
 .btn {
 
 	display: inline-block;
@@ -333,15 +334,22 @@ header {
 	text-align: center;
 	border: 15px solid transparent;
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-	transition: var(--transition);
 
 }
 
 .service:hover {
-	bottom: 10px;
-	border-color: var(--color-primary);
-	transform: translateY(30px);
-
+	/*bottom: 30px;*/
+	animation: upService .4s normal forwards ;
+}
+/* tidak bisa menggunakkan transition karena bertabrakan dengan aos */
+@keyframes upService {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		border-color: var(--color-primary);
+		transform: translateY(-15px);
+	}
 }
 .service-image i{
 	padding-top: 3rem;
@@ -370,7 +378,7 @@ header {
 	text-align: center;
 	border: 1px solid transparent;
 	width: 40%;
-	transition: var(--transition);
+	transition: var(--transition) !important;
 	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 	/**/
 }
